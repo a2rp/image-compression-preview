@@ -1,5 +1,6 @@
 ﻿export const maxImageBytes = 20 * 1024 * 1024;
 export const maxImageDimension = 8192;
+export const maxImagePixels = 25_000_000;
 export const outputFormats = ["image/webp", "image/jpeg"];
 
 const supportedExtensions = new Set(["jpg", "jpeg", "png", "webp"]);
@@ -13,6 +14,16 @@ export const validateSourceImage = (file) => {
   if (!Number.isFinite(file.size) || file.size <= 0) throw new Error("This image is empty or unreadable.");
   if (file.size > maxImageBytes) throw new Error("Images are limited to 20 MB.");
   return file;
+};
+
+export const validateImageDimensions = (width, height) => {
+  if (![width, height].every((value) => Number.isSafeInteger(value) && value > 0)) {
+    throw new Error("Image dimensions must be positive whole numbers.");
+  }
+  if (width > maxImageDimension || height > maxImageDimension || width * height > maxImagePixels) {
+    throw new Error("This image is too large to process safely. Choose an image up to 8,192 pixels per side and 25 megapixels.");
+  }
+  return { width, height };
 };
 
 export const getImageStats = (originalBytes, compressedBytes) => {
