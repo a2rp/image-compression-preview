@@ -1,0 +1,96 @@
+﻿.studio {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 50px 0 62px;
+  scroll-margin-top: 82px;
+
+  .heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 14px; margin-bottom: 18px; }
+  .heading > div:first-child > p { margin-bottom: 5px; color: var(--plum); font-family: var(--mono); font-size: 7px; font-weight: 760; letter-spacing: 0.11em; }
+  .heading h2 { color: var(--ink); font-size: clamp(24px, 3.2vw, 34px); font-weight: 780; letter-spacing: -0.055em; }
+  .heading > div:first-child > span { display: block; margin-top: 5px; color: var(--muted); font-size: 9px; }
+  .privacy { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 2px; padding: 6px 8px; border: 1px solid #d8e8df; border-radius: 99px; color: var(--green); background: #f0f7f2; font-size: 7px; font-weight: 700; white-space: nowrap; }
+  .privacy svg { width: 11px; height: 11px; }
+  .layout { display: grid; grid-template-columns: 340px minmax(0, 1fr); align-items: start; gap: 13px; }
+  .controls, .previewColumn { min-width: 0; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); box-shadow: 0 9px 30px rgb(52 38 56 / 5%); }
+  .picker { position: relative; border: 1px dashed #d7c2d0; border-radius: 9px; background: #fcf8fb; transition: border-color 150ms ease, box-shadow 150ms ease; }
+  .picker:hover, .picker.dragging { border-color: var(--plum); box-shadow: 0 0 0 3px rgb(146 88 123 / 10%); }
+  .picker.dragging { background: #f8edf4; }
+  .picker:focus-within { outline: 3px solid var(--plum); outline-offset: 3px; }
+  .picker input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); clip-path: inset(50%); white-space: nowrap; }
+  .picker label { display: grid; min-height: 134px; align-content: center; justify-items: center; padding: 13px; text-align: center; cursor: pointer; }
+  .pickerIcon { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 10px; color: var(--plum); background: #f1e5ed; }
+  .pickerIcon svg { width: 16px; height: 16px; }
+  .picker label b { max-width: 100%; overflow: hidden; margin-top: 8px; color: var(--ink); font-size: 9px; font-weight: 740; text-overflow: ellipsis; white-space: nowrap; }
+  .picker label > span:last-child { max-width: 100%; overflow: hidden; margin-top: 3px; color: var(--muted); font-size: 7px; text-overflow: ellipsis; white-space: nowrap; }
+  .dimensions { padding: 0 8px 9px; color: var(--green); text-align: center; font-family: var(--mono); font-size: 7px; }
+  .formatChoices { margin-top: 16px; border: 0; }
+  .formatChoices legend { margin-bottom: 7px; color: var(--ink); font-size: 8px; font-weight: 730; }
+  .formatChoices > div { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .formatChoices button { display: grid; min-width: 0; gap: 4px; padding: 8px; border: 1px solid var(--line); border-radius: 7px; text-align: left; background: var(--surface); transition: border-color 150ms ease, box-shadow 150ms ease; }
+  .formatChoices button:hover:not(:disabled) { border-color: var(--plum); box-shadow: 0 0 0 2px rgb(146 88 123 / 8%); }
+  .formatChoices .selected { border-color: var(--plum); box-shadow: inset 0 0 0 1px var(--plum); }
+  .formatChoices button:disabled { opacity: 0.58; }
+  .formatChoices b { color: var(--ink); font-size: 9px; }
+  .formatChoices span { color: var(--muted); font-size: 6px; line-height: 1.4; }
+  .qualityControl { margin-top: 16px; }
+  .qualityHeading { display: flex; align-items: center; justify-content: space-between; }
+  .qualityHeading label { color: var(--ink); font-size: 8px; font-weight: 730; }
+  .qualityHeading strong { color: var(--plum); font-family: var(--mono); font-size: 9px; }
+  .qualityControl input { width: 100%; height: 14px; margin-top: 8px; accent-color: var(--plum); }
+  .qualityControl input:disabled { opacity: 0.5; }
+  .rangeLabels { display: flex; justify-content: space-between; margin-top: 1px; color: var(--muted); font-size: 6px; }
+  .qualityControl > p { margin-top: 7px; color: var(--muted); font-size: 7px; }
+  .error, .notice { margin-top: 9px; padding: 8px; border-radius: 6px; font-size: 8px; line-height: 1.5; }
+  .error { border: 1px solid #e9c7c1; color: #984b3e; background: #f9efec; }
+  .notice { border: 1px solid #d7e8dd; color: var(--green); background: #f0f7f2; }
+  .downloadButton { display: flex; min-height: 39px; align-items: center; justify-content: center; gap: 7px; margin-top: 13px; border: 1px solid var(--ink); border-radius: 7px; color: white; background: var(--ink); font-size: 8px; font-weight: 730; transition: border-color 150ms ease, box-shadow 150ms ease; }
+  .downloadButton svg { width: 12px; height: 12px; color: #ecc5db; }
+  .downloadButton:hover:not(.disabled) { border-color: var(--plum); box-shadow: 0 0 0 3px rgb(146 88 123 / 14%); }
+  .downloadButton.disabled { opacity: 0.48; cursor: not-allowed; }
+  .processing { display: flex; align-items: center; justify-content: center; gap: 5px; margin-top: 8px; color: var(--plum); font-size: 7px; }
+  .processing svg { width: 10px; height: 10px; animation: spin 1s linear infinite; }
+  .limitNote { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px; margin-top: 11px; color: var(--muted); font-size: 6px; }
+  .limitNote span { width: 3px; height: 3px; border-radius: 50%; background: var(--plum); }
+
+  .previewColumn { padding: 14px; }
+  .previewHeading { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
+  .previewHeading h3 { color: var(--ink); font-size: 10px; font-weight: 750; }
+  .previewHeading > span { padding: 4px 7px; border-radius: 99px; color: var(--green); background: #eef5ef; font-size: 7px; font-weight: 700; }
+  .previewGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+  .previewCard { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; background: #f7f5f6; }
+  .previewCard > div:first-child { display: flex; min-height: 31px; align-items: center; justify-content: space-between; gap: 6px; padding: 0 8px; border-bottom: 1px solid var(--line); background: white; }
+  .previewCard > div:first-child span { color: var(--muted); font-family: var(--mono); font-size: 6px; font-weight: 700; letter-spacing: 0.08em; }
+  .previewCard > div:first-child b { color: var(--ink); font-family: var(--mono); font-size: 7px; }
+  .previewCard img { width: 100%; height: 260px; object-fit: contain; background-color: #f4f0f4; background-image: linear-gradient(45deg, #ebe5ea 25%, transparent 25%), linear-gradient(-45deg, #ebe5ea 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ebe5ea 75%), linear-gradient(-45deg, transparent 75%, #ebe5ea 75%); background-position: 0 0, 0 5px, 5px -5px, -5px 0; background-size: 10px 10px; }
+  .emptyPreview { display: grid; height: 260px; align-content: center; justify-items: center; gap: 7px; padding: 14px; color: var(--muted); text-align: center; background: #f6f2f5; }
+  .emptyPreview svg { width: 20px; height: 20px; color: #b18ba4; }
+  .emptyPreview span { max-width: 155px; font-size: 7px; line-height: 1.5; }
+  .resultSummary { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3px 8px; margin-top: 9px; padding: 9px 10px; border: 1px solid #dbe8dd; border-radius: 7px; background: #f2f8f3; }
+  .resultSummary > span { color: var(--muted); font-family: var(--mono); font-size: 6px; font-weight: 700; letter-spacing: 0.08em; }
+  .resultSummary strong { grid-column: 2; grid-row: 1 / 3; color: var(--green); font-family: var(--mono); font-size: 13px; }
+  .resultSummary p { color: var(--muted); font-size: 7px; }
+  .previewNote { margin-top: 9px; color: var(--muted); font-size: 6px; line-height: 1.55; }
+
+  @media (max-width: 860px) {
+    .layout { grid-template-columns: 300px minmax(0, 1fr); }
+    .previewCard img, .emptyPreview { height: 225px; }
+  }
+
+  @media (max-width: 680px) {
+    width: calc(100% - 30px);
+    padding: 38px 0 45px;
+    .heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .heading > div:first-child > span { max-width: 460px; line-height: 1.6; }
+    .layout { grid-template-columns: 1fr; }
+    .previewCard img, .emptyPreview { height: clamp(180px, 62vw, 310px); }
+  }
+
+  @media (max-width: 390px) {
+    .controls, .previewColumn { padding: 11px; }
+    .previewGrid { gap: 5px; }
+    .previewCard > div:first-child { padding: 0 5px; }
+    .previewCard > div:first-child span { font-size: 5px; }
+  }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }

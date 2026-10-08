@@ -10,7 +10,7 @@ const SiteHeader = () => (
       </a>
       <nav className={styles.navigation} aria-label="Main navigation">
         <a href="#studio">Generator</a>
-        <a href="#guide">About UUIDs</a>
+        <a href="#guide">How it works</a>
       </nav>
       <a className={styles.repository} href="https://github.com/a2rp/image-compression-preview" target="_blank" rel="noreferrer">
         <FiGithub aria-hidden="true" /> <span>Repository</span>
