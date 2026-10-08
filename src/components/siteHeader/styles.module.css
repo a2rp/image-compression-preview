@@ -50,7 +50,6 @@
       color: var(--muted);
       font-size: 12px;
       font-weight: 650;
-      transition: color 150ms ease;
     }
     a:hover {
       color: var(--ink);
