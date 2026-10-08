@@ -40,6 +40,13 @@ export const getImageStats = (originalBytes, compressedBytes) => {
   };
 };
 
+export const getSizeMessage = (stats) => {
+  if (!stats) return "";
+  if (stats.savedBytes === 0) return "Same size as original";
+  if (stats.isSmaller) return `${stats.reductionPercent.toFixed(1)}% smaller`;
+  return `${Math.abs(stats.reductionPercent).toFixed(1)}% larger`;
+};
+
 export const getQualityLabel = (quality) => {
   if (quality >= 0.85) return "Higher detail";
   if (quality >= 0.65) return "Balanced";

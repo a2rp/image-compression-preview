@@ -9,7 +9,7 @@ const SiteHeader = () => (
         <span>Image <b>Optimize</b></span>
       </a>
       <nav className={styles.navigation} aria-label="Main navigation">
-        <a href="#studio">Generator</a>
+        <a href="#studio">Compress</a>
         <a href="#guide">How it works</a>
       </nav>
       <a className={styles.repository} href="https://github.com/a2rp/image-compression-preview" target="_blank" rel="noreferrer">

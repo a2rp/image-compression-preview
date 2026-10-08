@@ -1,6 +1,6 @@
 ﻿import assert from "node:assert/strict";
 import test from "node:test";
-import { getCompressedFilename, getImageStats, getQualityLabel, maxImageBytes, maxImagePixels, validateImageDimensions, validateSourceImage } from "./compression.js";
+import { getCompressedFilename, getImageStats, getQualityLabel, getSizeMessage, maxImageBytes, maxImagePixels, validateImageDimensions, validateSourceImage } from "./compression.js";
 
 test("accepts supported image types and caps source size", () => {
   assert.equal(validateSourceImage({ name: "photo.png", type: "image/png", size: 100 }).name, "photo.png");
@@ -15,6 +15,13 @@ test("calculates savings and handles a result that grows", () => {
   assert.equal(getImageStats(400, 500).isSmaller, false);
   assert.equal(getImageStats(0, 0).reductionPercent, 0);
   assert.throws(() => getImageStats(-1, 2), /non-negative/);
+});
+
+test("formats size feedback safely before and after compression", () => {
+  assert.equal(getSizeMessage(null), "");
+  assert.equal(getSizeMessage(getImageStats(1000, 600)), "40.0% smaller");
+  assert.equal(getSizeMessage(getImageStats(400, 500)), "25.0% larger");
+  assert.equal(getSizeMessage(getImageStats(500, 500)), "Same size as original");
 });
 
 test("accepts useful image dimensions and rejects unsafe canvases", () => {

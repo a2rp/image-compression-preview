@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { FiDownload, FiImage, FiRefreshCw, FiShield, FiUploadCloud } from "react-icons/fi";
-import { getCompressedFilename, getImageStats, getQualityLabel, outputFormats, validateImageDimensions, validateSourceImage } from "../../utils/compression.js";
+import { getCompressedFilename, getImageStats, getQualityLabel, getSizeMessage, outputFormats, validateImageDimensions, validateSourceImage } from "../../utils/compression.js";
 import styles from "./styles.module.css";
 
 const formatBytes = (bytes) => {
@@ -111,7 +111,7 @@ const CompressionStudio = () => {
   };
 
   const stats = compressed && source ? getImageStats(source.size, compressed.size) : null;
-  const sizeMessage = stats?.savedBytes === 0 ? "Same size as original" : stats?.isSmaller ? `${stats.reductionPercent.toFixed(1)}% smaller` : `${Math.abs(stats.reductionPercent).toFixed(1)}% larger`;
+  const sizeMessage = getSizeMessage(stats);
   const outputName = source ? getCompressedFilename(source.name, format) : "image-compressed.webp";
 
   return (
