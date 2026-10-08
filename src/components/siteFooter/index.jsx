@@ -1,4 +1,4 @@
-﻿import { FiCodepen, FiCoffee, FiFacebook, FiGithub, FiGlobe, FiHeart, FiLinkedin, FiMail, FiYoutube } from "react-icons/fi";
+import { FiCodepen, FiCoffee, FiFacebook, FiGithub, FiGlobe, FiHeart, FiLinkedin, FiMail, FiYoutube } from "react-icons/fi";
 import styles from "./styles.module.css";
 
 const footerLinks = [

@@ -1,4 +1,4 @@
-﻿.button {
+.button {
   position: fixed;
   z-index: 15;
   right: max(22px, calc((100vw - 1160px) / 2));
@@ -13,9 +13,18 @@
   background: var(--ink);
   box-shadow: 0 6px 20px rgb(30 40 35 / 18%);
   transition: border-color 150ms ease, box-shadow 150ms ease;
-
-  svg { width: 17px; height: 17px; }
-  &:hover { border-color: var(--green); box-shadow: 0 0 0 4px rgb(66 98 78 / 18%); }
-
-  @media (max-width: 600px) { right: 15px; bottom: 15px; width: 40px; height: 40px; }
+  svg {
+    width: 17px;
+    height: 17px;
+  }
+  &:hover {
+    border-color: var(--green);
+    box-shadow: 0 0 0 4px rgb(66 98 78 / 18%);
+  }
+  @media (max-width: 600px) {
+    right: 15px;
+    bottom: 15px;
+    width: 40px;
+    height: 40px;
+  }
 }

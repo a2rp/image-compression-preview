@@ -1,4 +1,4 @@
-﻿import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { FiDownload, FiImage, FiRefreshCw, FiShield, FiUploadCloud } from "react-icons/fi";
 import { getCompressedFilename, getImageStats, getQualityLabel, outputFormats, validateImageDimensions, validateSourceImage } from "../../utils/compression.js";
 import styles from "./styles.module.css";

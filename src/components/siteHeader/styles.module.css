@@ -1,4 +1,4 @@
-﻿.header {
+.header {
   position: fixed;
   z-index: 20;
   top: 0;
@@ -8,7 +8,6 @@
   border-bottom: 1px solid var(--line);
   background: rgb(246 246 238 / 94%);
   backdrop-filter: blur(16px);
-
   .bar {
     display: flex;
     width: min(1120px, calc(100% - 48px));
@@ -16,7 +15,6 @@
     align-items: center;
     margin: 0 auto;
   }
-
   .brand {
     display: inline-flex;
     align-items: center;
@@ -25,10 +23,11 @@
     font-size: 14px;
     font-weight: 800;
     letter-spacing: -0.04em;
-
-    b { color: var(--muted); font-weight: 550; }
+    b {
+      color: var(--muted);
+      font-weight: 550;
+    }
   }
-
   .brandMark {
     display: grid;
     width: 30px;
@@ -37,20 +36,26 @@
     border-radius: 9px;
     color: var(--ink);
     background: var(--accent);
-
-    svg { width: 17px; height: 17px; }
+    svg {
+      width: 17px;
+      height: 17px;
+    }
   }
-
   .navigation {
     display: flex;
     align-items: center;
     gap: 27px;
     margin-left: 56px;
-
-    a { color: var(--muted); font-size: 12px; font-weight: 650; transition: color 150ms ease; }
-    a:hover { color: var(--ink); }
+    a {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 650;
+      transition: color 150ms ease;
+    }
+    a:hover {
+      color: var(--ink);
+    }
   }
-
   .repository {
     display: inline-flex;
     min-height: 36px;
@@ -65,22 +70,40 @@
     font-size: 11px;
     font-weight: 700;
     transition: border-color 150ms ease, box-shadow 150ms ease;
-
-    svg { width: 15px; height: 15px; }
-    &:hover { border-color: var(--ink); box-shadow: 0 0 0 3px rgb(47 58 51 / 8%); }
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+    &:hover {
+      border-color: var(--ink);
+      box-shadow: 0 0 0 3px rgb(47 58 51 / 8%);
+    }
   }
-
   @media (max-width: 600px) {
     height: 62px;
-    .bar { width: calc(100% - 30px); }
-    .navigation { gap: 12px; margin-left: 20px; }
-    .navigation a { font-size: 10px; }
-    .repository { min-height: 33px; gap: 6px; padding: 0 9px; font-size: 10px; }
+    .bar {
+      width: calc(100% - 30px);
+    }
+    .navigation {
+      gap: 12px;
+      margin-left: 20px;
+    }
+    .navigation a {
+      font-size: 10px;
+    }
+    .repository {
+      min-height: 33px;
+      gap: 6px;
+      padding: 0 9px;
+      font-size: 10px;
+    }
   }
-
   @media (max-width: 430px) {
-    .navigation { display: none; }
-    .repository { margin-left: auto; }
+    .navigation {
+      display: none;
+    }
+    .repository {
+      margin-left: auto;
+    }
   }
 }
-

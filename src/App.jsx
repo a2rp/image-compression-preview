@@ -6,12 +6,12 @@ import SiteHeader from "./components/siteHeader/index.jsx";
 import styles from "./App.module.css";
 
 const App = () => (
-  <div className={styles.page} id="top">
+  <div className={styles.appShell} id="top">
     <SiteHeader />
     <main>
       <section className={styles.hero} aria-labelledby="hero-title">
         <div className={styles.heroCopy}>
-          <p className={styles.kicker}><span /> A quieter way to make images lighter</p>
+          <p className={styles.contextLabel}><span /> A quieter way to make images lighter</p>
           <h1 id="hero-title">Smaller files.<br /><em>Same feeling.</em></h1>
           <p className={styles.intro}>Fine-tune an image until the file size feels right. Compare the original and compressed result side by side, then keep the version you love.</p>
           <div className={styles.heroActions}><a className={styles.primaryLink} href="#studio">Start compressing <FiArrowDown aria-hidden="true" /></a><span><FiLock aria-hidden="true" /> Your images stay on your device</span></div>
@@ -31,7 +31,7 @@ const App = () => (
       </section>
       <CompressionStudio />
       <section className={styles.guide} id="guide" aria-labelledby="guide-title">
-        <div className={styles.guideIntro}><p className={styles.kicker}>GOOD TO KNOW</p><h2 id="guide-title">A little care for every pixel.</h2><p>Compression is a balance between how an image looks and how much space it takes. This workspace keeps that choice clear and in your hands.</p></div>
+        <div className={styles.guideIntro}><p className={styles.contextLabel}>GOOD TO KNOW</p><h2 id="guide-title">A little care for every pixel.</h2><p>Compression is a balance between how an image looks and how much space it takes. This workspace keeps that choice clear and in your hands.</p></div>
         <div className={styles.guideCards}>
           <article><span>01</span><h3>Choose your output</h3><p>WebP is compact and keeps transparency. JPEG works in more places and fills transparent areas with white.</p></article>
           <article><span>02</span><h3>Set the detail</h3><p>Move quality down for a lighter result, or up when the small details matter. The preview updates before you save.</p></article>
